@@ -20,8 +20,19 @@ const app = express();
 app.use(express.json());
 app.use(
   cors({
-    origin: ['http://localhost:5173', 'http://localhost:5174'], // Vite ports
+    origin: [
+      'http://localhost:5173', // Vite default port
+      'http://localhost:5174', // Vite alternate port
+      'http://localhost:3000', // Frontend development port
+      'http://192.168.1.3:3000', // Your local IP
+      'https://coligo-frontend.vercel.app', // Add your Vercel deployment URL
+      'https://coligo-frontend.netlify.app', // Add your Netlify deployment URL
+      /\.vercel\.app$/, // Allow all Vercel subdomains
+      /\.netlify\.app$/, // Allow all Netlify subdomains
+    ],
     credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
   })
 );
 app.use(logger);
