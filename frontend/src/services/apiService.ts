@@ -1,7 +1,6 @@
 import axios from 'axios';
 import { safeGetItem, safeRemoveItem } from '../utils/localStorage';
-
-const API_BASE_URL = 'http://localhost:3030/api/v1';
+import { API_BASE_URL } from '../utils/config';
 
 class ApiService {
   private axiosInstance = axios.create({

@@ -1,4 +1,5 @@
-import React, { Component, ErrorInfo, ReactNode } from 'react';
+import { Component } from 'react';
+import type { ErrorInfo, ReactNode } from 'react';
 import { Box, Typography, Button, Container } from '@mui/material';
 import { Refresh as RefreshIcon } from '@mui/icons-material';
 
@@ -47,7 +48,8 @@ class ErrorBoundary extends Component<Props, State> {
               Something went wrong!
             </Typography>
             <Typography variant="body1" sx={{ mb: 3 }}>
-              We're sorry, but something unexpected happened. Please try refreshing the page.
+              We're sorry, but something unexpected happened. Please try
+              refreshing the page.
             </Typography>
             {this.state.error && (
               <Typography variant="body2" sx={{ mb: 3, opacity: 0.8 }}>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import {
   Box,
   Container,
@@ -292,7 +292,12 @@ export const Performance = () => {
               <Typography component="div" variant="h6" color="text.secondary">
                 Attendance Rate
               </Typography>
-              <Typography component="div" variant="body2" color="text.secondary" sx={{ mt: 1 }}>
+              <Typography
+                component="div"
+                variant="body2"
+                color="text.secondary"
+                sx={{ mt: 1 }}
+              >
                 {performance.attendance
                   ? `${performance.attendance.present} of ${performance.attendance.total} classes`
                   : 'No attendance data'}
@@ -311,7 +316,12 @@ export const Performance = () => {
               <Typography component="div" variant="h6" color="text.secondary">
                 Active Courses
               </Typography>
-              <Typography component="div" variant="body2" color="text.secondary" sx={{ mt: 1 }}>
+              <Typography
+                component="div"
+                variant="body2"
+                color="text.secondary"
+                sx={{ mt: 1 }}
+              >
                 Enrolled this semester
               </Typography>
             </CardContent>
@@ -355,7 +365,10 @@ export const Performance = () => {
                         <AssessmentIcon color="info" />
                       )}
                       <Typography variant="h6" fontWeight="bold">
-                        {(course.averageGrade || course.average || 0).toFixed(1)}%
+                        {(course.averageGrade || course.average || 0).toFixed(
+                          1
+                        )}
+                        %
                       </Typography>
                     </Box>
                   </Box>
@@ -377,7 +390,11 @@ export const Performance = () => {
                     sx={{ mb: 1 }}
                   />
 
-                  <Typography component="div" variant="caption" color="text.secondary">
+                  <Typography
+                    component="div"
+                    variant="caption"
+                    color="text.secondary"
+                  >
                     {course.totalGrades || course.assignments || 0}{' '}
                     {course.totalGrades ? 'grades' : 'assignments'} completed
                   </Typography>
@@ -412,7 +429,11 @@ export const Performance = () => {
                         </Box>
                       }
                       secondary={
-                        <Typography component="div" variant="body2" color="text.secondary">
+                        <Typography
+                          component="div"
+                          variant="body2"
+                          color="text.secondary"
+                        >
                           {insight.message}
                         </Typography>
                       }

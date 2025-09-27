@@ -1,9 +1,13 @@
 import '@testing-library/jest-dom'
 
 // Mock window.matchMedia
-Object.defineProperty(window, 'matchMedia', {
+/// <reference types="vitest" />
+import { vi, beforeAll } from 'vitest';
+
+beforeAll(() => {
+  Object.defineProperty(window, 'matchMedia', {
   writable: true,
-  value: vi.fn().mockImplementation(query => ({
+  value: vi.fn().mockImplementation((query: string) => ({
     matches: false,
     media: query,
     onchange: null,
